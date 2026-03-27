@@ -26,7 +26,7 @@ interface YTVideos{
 }
 
 const Feed = ({category}: FeedProps) => {
-    const API_KEY = "AIzaSyAYEM0k8cp2vxvAdVVUeu_LGXy9LjHnX2g"
+    const API_KEY = import.meta.env.API_KEY;
 
     const [videos, setVideos] = useState<YTVideos[]>([]);
     const [error, setError] = useState<string|null>(null)
