@@ -21,15 +21,11 @@ jobs:
         run: |
           npm install
           npm run build
+        env:
+          VITE_YOUTUBE_API_KEY: ${{ secrets.VITE_YOUTUBE_API_KEY }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # Vite puts your "browser-ready" files here
+          folder: dist
           branch: gh-pages
-      - name: Install and Build 🏗️
-        run: |
-          npm install
-          npm run build
-        env:
-          VITE_YOUTUBE_API_KEY: ${{ secrets.VITE_YOUTUBE_API_KEY }}
