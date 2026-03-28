@@ -27,3 +27,9 @@ jobs:
         with:
           folder: dist # Vite puts your "browser-ready" files here
           branch: gh-pages
+      - name: Install and Build 🏗️
+        run: |
+          npm install
+          npm run build
+        env:
+          VITE_YOUTUBE_API_KEY: ${{ secrets.VITE_YOUTUBE_API_KEY }}
